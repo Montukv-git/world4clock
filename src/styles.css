@@ -71,3 +71,33 @@ h1{margin:0;font-size:18px}
 .date-big{margin-top:8px;color:var(--muted);font-size:14px}
 .footer{width:100%;max-width:1100px;margin-top:14px;display:flex;gap:10px;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
 .unsynced{padding:4px 8px;border:1px solid #b91c1c;border-radius:6px;color:#ffb3b3;font-size:12px}
+
+.footer {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.footer-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-right {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-right .powered strong {
+  color: var(--accent);
+  font-weight: 600;
+}
