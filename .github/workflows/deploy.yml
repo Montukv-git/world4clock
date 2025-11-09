@@ -12,15 +12,28 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install deps
-        run: npm ci
-      - name: Build
+
+      # ✅ Automatically handles missing package-lock.json
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            echo "Found package-lock.json — running npm ci"
+            npm ci
+          else
+            echo "No lockfile found — running npm install instead"
+            npm install
+          fi
+
+      - name: Build project
         run: npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
