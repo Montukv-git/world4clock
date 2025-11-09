@@ -159,9 +159,15 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        <span>{syncMessage}</span>
-        {!synced && <span className="unsynced">Unsynced</span>}
+        <div className="footer-left">
+          <span>{syncMessage}</span>
+          {!synced && <span className="unsynced">Unsynced</span>}
+        </div>
+        <div className="footer-right">
+          <span className="powered">Powered by <strong>MKVTech © 2025</strong></span>
+        </div>
       </footer>
+
     </div>
   )
 }
